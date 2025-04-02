@@ -1,9 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import { useState } from "react";
+export const Header = () => {
+  const logo = new URL("../../assets/logo.png", import.meta.url).toString();
 
-const logo = new URL("./assets/logo.png", import.meta.url).toString();
+  const [login, setLogin] = useState("Login");
 
-const Header = () => {
+  const Logout = () => {
+    login == "Login" ? setLogin("Logout") : setLogin("Login");
+  };
+
   return (
     <div className="header">
       <div className="logo-container">
@@ -15,20 +19,13 @@ const Header = () => {
           <li className="nav-item">About US</li>
           <li className="nav-item">Contact Us</li>
           <li className="nav-item">Cart</li>
+          <button className="login" onClick={Logout}>
+            {login}
+          </button>
         </ul>
       </div>
     </div>
   );
 };
 
-const App = () => {
-  return (
-    <div>
-      <Header />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<App />);
+export default Header;
