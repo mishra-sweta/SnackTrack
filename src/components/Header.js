@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 export const Header = () => {
   const logo = new URL("../../assets/logo.png", import.meta.url).toString();
 
@@ -15,9 +17,21 @@ export const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li className="nav-item">Home</li>
-          <li className="nav-item">About US</li>
-          <li className="nav-item">Contact Us</li>
+          <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
+            <li className="nav-item">Home</li>
+          </Link>
+          <Link
+            to={"/about"}
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <li className="nav-item">About US</li>
+          </Link>
+          <Link
+            to={"/contact"}
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <li className="nav-item">Contact Us</li>
+          </Link>
           <li className="nav-item">Cart</li>
           <button className="login" onClick={Logout}>
             {login}
