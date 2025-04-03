@@ -31,8 +31,17 @@
   flex-wrap: wrap;
 }
 
-.search {
+.filter {
+  display: flex;
   margin: 10px;
+}
+
+.filter > * {
+  margin: 0 5px;
+}
+
+.search > * {
+  margin: 0 5px;
 }
 
 .res-card {
