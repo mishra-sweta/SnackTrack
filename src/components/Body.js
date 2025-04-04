@@ -58,7 +58,7 @@ const Body = () => {
           className="filter-btn"
           onClick={() => {
             const filteredList = restaurants.filter(
-              (res) => res.info.avgRating >= 4
+              (res) => res.info.avgRating >= 4.5
             );
             setFilterRestaurants(filteredList);
           }}
@@ -71,6 +71,7 @@ const Body = () => {
           <Link
             to={`/restaurants/${restaurant.info.id}`}
             key={restaurant.info.id}
+            style={{ textDecoration: "none", color: "black" }}
           >
             <RestaurantCard resData={restaurant.info} />
           </Link>
