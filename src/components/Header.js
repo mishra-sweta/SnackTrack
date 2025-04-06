@@ -12,9 +12,11 @@ export const Header = () => {
 
   return (
     <div className="header">
-      <div className="logo-container">
-        <img className="logo" src={logo} />
-      </div>
+      <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
+        <div className="logo-container">
+          <img className="logo" src={logo} />
+        </div>
+      </Link>
       <div className="nav-items">
         <ul>
           <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>

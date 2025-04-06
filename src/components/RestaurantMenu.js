@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { RES_URL } from "../utils/constants";
+import { MENU_URL } from "../utils/constants";
 
 const RestaurantMenu = () => {
   const [restaurantDetails, setRestaurantDetails] = useState(null);
-  const [title, setTitle] = useState("");
+  const [menu, setMenu] = useState([]);
   const { id } = useParams();
 
   const fetchMenu = async () => {
-    const menu = await fetch(RES_URL + id);
+    const menuData = await fetch(MENU_URL + id);
 
-    const json = await menu.json();
+    const json = await menuData.json();
 
     setRestaurantDetails(json?.data?.cards[2]?.card?.card?.info);
 
-    setTitle(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+    setMenu(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
   };
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const RestaurantMenu = () => {
 
   if (restaurantDetails === null) return <Shimmer />;
 
-  //console.log(title);
+  //console.log(menu);
 
   return (
     <div>
@@ -34,12 +34,12 @@ const RestaurantMenu = () => {
           {restaurantDetails.cuisines.join(", ")} -{" "}
           {restaurantDetails.costForTwoMessage}
         </p>
-        {title?.map((title, index) => (
+        {menu?.map((menu, index) => (
           <div key={index}>
-            <h3>{title?.card?.card?.title}</h3>
+            <h3>{menu?.card?.card?.title}</h3>
 
-            {title?.card?.card?.categories
-              ? title?.card?.card?.categories?.map((cat, index) => (
+            {menu?.card?.card?.categories
+              ? menu?.card?.card?.categories?.map((cat, index) => (
                   <div key={index}>
                     {cat?.itemCards?.map((items) => (
                       <div key={items?.card?.info?.id}>
@@ -54,7 +54,7 @@ const RestaurantMenu = () => {
                     ))}
                   </div>
                 ))
-              : title?.card?.card?.itemCards?.map((items) => (
+              : menu?.card?.card?.itemCards?.map((items) => (
                   <div key={items?.card?.info?.id}>
                     <ul>
                       <li>
