@@ -11,33 +11,32 @@ export const Header = () => {
   };
 
   return (
-    <div className="header">
-      <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
-        <div className="logo-container">
-          <img className="logo" src={logo} />
+    <div className="flex border border-black m-4">
+      <Link to={"/"}>
+        <div>
+          <img className="w-32" src={logo} />
         </div>
       </Link>
-      <div className="nav-items">
-        <ul>
-          <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
-            <li className="nav-item">Home</li>
-          </Link>
-          <Link
-            to={"/about"}
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            <li className="nav-item">About US</li>
-          </Link>
-          <Link
-            to={"/contact"}
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            <li className="nav-item">Contact Us</li>
-          </Link>
-          <li className="nav-item">Cart</li>
-          <button className="login" onClick={Logout}>
-            {login}
-          </button>
+      <div className="flex justify-end w-full items-center text-[20px] p-4 m-4">
+        <ul className="flex space-x-4 items-center">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
+          </li>
+          <li>Cart</li>
+          <li>
+            <button
+              className="bg-gray-500 text-white px-4 py-2 rounded cursor-pointer"
+              onClick={Logout}
+            >
+              {login}
+            </button>
+          </li>
         </ul>
       </div>
     </div>

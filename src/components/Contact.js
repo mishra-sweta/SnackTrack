@@ -1,8 +1,8 @@
 const Contact = () => {
   return (
-    <div>
-      <h1>Contact Us</h1>
-      <h2>email: snacktrack.customer@help.in</h2>
+    <div className="m-10 space-x-4">
+      <h1 className="text-4xl font-bold">Contact Us</h1>
+      <h2 className="text-2xl">email: snacktrack.customer@help.in</h2>
     </div>
   );
 };
