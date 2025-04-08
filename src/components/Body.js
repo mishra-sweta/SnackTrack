@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { SWIGGY_API_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import withTopRatedLabel from "../utils/withTopRatedLabel";
 
 const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -27,6 +28,8 @@ const Body = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const TopRatedRestaurant = withTopRatedLabel(RestaurantCard);
 
   const onlineStatus = useOnlineStatus();
 
@@ -75,9 +78,12 @@ const Body = () => {
           <Link
             to={`/restaurants/${restaurant.info.id}`}
             key={restaurant.info.id}
-            style={{ textDecoration: "none", color: "black" }}
           >
-            <RestaurantCard resData={restaurant.info} />
+            {restaurant.info.avgRating >= 4.5 ? (
+              <TopRatedRestaurant resData={restaurant.info} />
+            ) : (
+              <RestaurantCard resData={restaurant.info} />
+            )}
           </Link>
         ))}
       </div>

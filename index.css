@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
 .card-style {
-  @apply rounded bg-[#f0f0f0] w-[260px] h-[450px] m-[10px] p-[10px] text-[14px] space-y-1 hover:bg-gray-300 shadow-2xl;
+  @apply rounded bg-[#f0f0f0] w-[260px] h-[400px] m-[10px] p-[10px] text-[14px] space-y-1 hover:bg-gray-300 shadow-2xl;
+}
+
+.rescard-style {
+  @apply rounded bg-[#f0f0f0] w-[260px] m-[10px] p-[10px] text-[14px] space-y-1 hover:bg-gray-300 shadow-2xl;
 }
