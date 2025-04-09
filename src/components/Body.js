@@ -10,6 +10,7 @@ const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [filterRestaurants, setFilterRestaurants] = useState([]);
   const [search, setSearch] = useState("");
+  const [input, setInput] = useState("");
 
   const fetchData = async () => {
     const data = await fetch(SWIGGY_API_URL);
@@ -72,6 +73,12 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+        <input
+          type="text"
+          className="border border-black"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
       </div>
       <div className="flex flex-wrap gap-3">
         {filterRestaurants.map((restaurant) => (

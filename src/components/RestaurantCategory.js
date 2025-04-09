@@ -20,7 +20,11 @@ const RestaurantCategory = ({ menu, showItems, setShowIndex }) => {
               menu?.card?.card?.itemCards?.length}
             {")"}
           </span>
-          <span className="center"> ▼</span>
+          {showItems ? (
+            <span className="center">▲</span>
+          ) : (
+            <span className="center">▼</span>
+          )}
         </div>
       ) : null}
 

@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 export const Header = () => {
   const logo = new URL("../../assets/logo.png", import.meta.url).toString();
 
   const [login, setLogin] = useState("Login");
+
+  const name = useContext(UserContext);
 
   const Logout = () => {
     login == "Login" ? setLogin("Logout") : setLogin("Login");
@@ -37,6 +40,7 @@ export const Header = () => {
               {login}
             </button>
           </li>
+          <li className="font-bold text-lg">{name.loggedInUser}</li>
         </ul>
       </div>
     </div>
