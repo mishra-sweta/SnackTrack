@@ -3,9 +3,11 @@ import { useParams } from "react-router-dom";
 import useRestaurantDetails from "../utils/useRestaurantDetails";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
+  const [showIndex, setShowIndex] = useState(0);
 
   const restaurantDetails = useRestaurantDetails(id);
   const menu = useRestaurantMenu(id);
@@ -23,9 +25,14 @@ const RestaurantMenu = () => {
           {restaurantDetails.costForTwoMessage}
         </p>
         {menu?.map((menu, index) => (
-          <div key={index}>
-            <RestaurantCategory menu={menu} />
-          </div>
+          <RestaurantCategory
+            key={menu?.card?.card?.title}
+            menu={menu}
+            showItems={showIndex === index ? true : false}
+            setShowIndex={() =>
+              setShowIndex(showIndex === index ? null : index)
+            }
+          />
         ))}
       </div>
     </div>

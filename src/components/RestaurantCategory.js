@@ -1,12 +1,9 @@
 import { useState } from "react";
 import FoodItem from "./FoodItem";
 
-const RestaurantCategory = (props) => {
-  const { menu } = props;
-  const [showItems, setShowItems] = useState(false);
-
+const RestaurantCategory = ({ menu, showItems, setShowIndex }) => {
   const handleShowList = () => {
-    showItems ? setShowItems(false) : setShowItems(true);
+    setShowIndex();
   };
 
   return (
@@ -30,9 +27,11 @@ const RestaurantCategory = (props) => {
       {menu?.card?.card?.categories
         ? menu?.card?.card?.categories?.map((cat, index) => (
             <div key={index}>
-              <div key={cat?.categoryId}>
-                <span className="font-bold">{cat.title}</span>
-              </div>
+              {showItems && (
+                <div key={cat?.categoryId}>
+                  <span className="font-bold">{cat.title}</span>
+                </div>
+              )}
               {cat?.itemCards?.map(
                 (items) =>
                   showItems && (
