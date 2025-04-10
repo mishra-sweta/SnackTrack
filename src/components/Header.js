@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 export const Header = () => {
   const logo = new URL("../../assets/logo.png", import.meta.url).toString();
@@ -12,6 +13,9 @@ export const Header = () => {
   const Logout = () => {
     login == "Login" ? setLogin("Logout") : setLogin("Login");
   };
+  //subscribing to the store using Selector
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
 
   return (
     <div className="flex border border-black m-4">
@@ -31,7 +35,7 @@ export const Header = () => {
           <li>
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>Cart</li>
+          <li className="font-bold">Cart - {cartItems.length}</li>
           <li>
             <button
               className="bg-gray-500 text-white px-4 py-2 rounded cursor-pointer"

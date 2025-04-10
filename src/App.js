@@ -16,12 +16,15 @@ const App = () => {
 
   useEffect(() => {
     const user = {
+      //Assume we made an API call to get the login details
       name: "Sweta Mishra",
     };
     setUserName(user.name);
   }, []);
   return (
+    //wrapping the app in the store provider to access the data everywhere, you can wrapper where it is needed
     <Provider store={appStore}>
+      {/* Context API provided by react for centarlised data access */}
       <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
         <div className="app">
           <Header />
