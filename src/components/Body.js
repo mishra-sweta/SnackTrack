@@ -1,10 +1,11 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { SWIGGY_API_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import withTopRatedLabel from "../utils/withTopRatedLabel";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -29,6 +30,8 @@ const Body = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   const TopRatedRestaurant = withTopRatedLabel(RestaurantCard);
 
@@ -76,8 +79,8 @@ const Body = () => {
         <input
           type="text"
           className="border border-black"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
+          value={loggedInUser}
+          onChange={(e) => setUserName(e.target.value)}
         />
       </div>
       <div className="flex flex-wrap gap-3">
