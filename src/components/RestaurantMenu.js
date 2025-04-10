@@ -26,7 +26,7 @@ const RestaurantMenu = () => {
         </p>
         {menu?.map((menu, index) => (
           <RestaurantCategory
-            key={menu?.card?.card?.title}
+            key={index}
             menu={menu}
             showItems={showIndex === index ? true : false}
             setShowIndex={() =>

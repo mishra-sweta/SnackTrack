@@ -35,7 +35,9 @@ export const Header = () => {
           <li>
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li className="font-bold">Cart - {cartItems.length}</li>
+          <li className="font-bold">
+            <Link to={"/cart"}>Cart - {cartItems.length}</Link>
+          </li>
           <li>
             <button
               className="bg-gray-500 text-white px-4 py-2 rounded cursor-pointer"

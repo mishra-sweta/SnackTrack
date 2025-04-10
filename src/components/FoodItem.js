@@ -2,13 +2,14 @@ import { useDispatch } from "react-redux";
 import { FOOD_ITEM_URL } from "../utils/constants";
 import { addItem } from "../utils/cartSlice";
 
-const FoodItem = (props) => {
+const FoodItem = ({ items }) => {
   const dispatch = useDispatch();
 
   const handleAddItem = (item) => {
     dispatch(addItem(item));
   };
-  const { items } = props;
+  //console.log(items);
+
   return (
     <div
       key={items?.card?.info?.id}
@@ -32,7 +33,7 @@ const FoodItem = (props) => {
         <div className="absolute ">
           <button
             className=" bg-white p-1 rounded text-sm"
-            onClick={() => handleAddItem(items?.card?.info)}
+            onClick={() => handleAddItem(items)}
           >
             Add +
           </button>
