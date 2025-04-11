@@ -2,7 +2,8 @@ const Contact = () => {
   return (
     <div className="m-10 space-x-4">
       <h1 className="text-4xl font-bold">Contact Us</h1>
-      <h2 className="text-2xl">email: snacktrack.customer@help.in</h2>
+      <p className="text-2xl">email: snacktrack.customer@help.in</p>
+      <p className="text-2xl">Phone Number: +12 5678 3672</p>
     </div>
   );
 };
