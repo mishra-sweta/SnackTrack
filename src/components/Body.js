@@ -11,7 +11,6 @@ const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [filterRestaurants, setFilterRestaurants] = useState([]);
   const [search, setSearch] = useState("");
-  const [input, setInput] = useState("");
 
   const fetchData = async () => {
     const data = await fetch(SWIGGY_API_URL);

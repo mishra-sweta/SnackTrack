@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
@@ -6,6 +5,7 @@ const RestaurantCard = (props) => {
   const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } = resData;
 
   const deliveryTime = resData.sla.deliveryTime;
+  // console.log(resData);
 
   return (
     <div className="rescard-style">

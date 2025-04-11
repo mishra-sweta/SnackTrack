@@ -20,7 +20,7 @@ test("should load Contact paragraphs", () => {
   render(<Contact />);
 
   const paragraphs = screen.getAllByRole("paragraph");
-  console.log(paragraphs);
+  //console.log(paragraphs);
   //THIS IS CALLED ASSERTION
   expect(paragraphs.length).toBe(2);
 });

@@ -2,10 +2,9 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import logo from "../../assets/logo.png";
 
 export const Header = () => {
-  const logo = new URL("../../assets/logo.png", import.meta.url).toString();
-
   const [login, setLogin] = useState("Login");
 
   const name = useContext(UserContext);
@@ -15,7 +14,6 @@ export const Header = () => {
   };
   //subscribing to the store using Selector
   const cartItems = useSelector((store) => store.cart.items);
-  //console.log(cartItems);
 
   return (
     <div className="flex border border-black m-4">

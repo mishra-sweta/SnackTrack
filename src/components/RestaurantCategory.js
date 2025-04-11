@@ -1,4 +1,3 @@
-import { useState } from "react";
 import FoodItem from "./FoodItem";
 
 const RestaurantCategory = ({ menu, showItems, setShowIndex }) => {

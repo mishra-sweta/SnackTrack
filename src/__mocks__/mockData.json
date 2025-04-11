@@ -1,0 +1,15 @@
+{
+  "id": "622018",
+  "name": "MOJO Pizza - 2X Toppings",
+  "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/12/54261e3e-abfc-478e-9132-160add734508_622018.jpg",
+  "costForTwo": "₹250 for two",
+  "cuisines": ["Pizzas", "Italian", "Fast Food", "Desserts"],
+  "avgRating": 4.6,
+  "parentId": "11329",
+  "avgRatingString": "4.6",
+  "totalRatingsString": "1.2K+",
+  "sla": {
+    "deliveryTime": 25,
+    "slaString": "20-30 mins"
+  }
+}
