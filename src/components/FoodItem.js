@@ -13,6 +13,7 @@ const FoodItem = ({ items }) => {
   return (
     <div
       key={items?.card?.info?.id}
+      data-testid="foodItems"
       className="flex bg-gray-100 shadow-md p-4 mb-4 rounded-lg w-6/12 m-auto"
     >
       {/* Left Section: Text Content */}
@@ -32,6 +33,7 @@ const FoodItem = ({ items }) => {
       <div className="w-3/12 flex ">
         <div className="absolute ">
           <button
+            data-testid="addButton"
             className=" bg-white p-1 rounded text-sm"
             onClick={() => handleAddItem(items)}
           >

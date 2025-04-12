@@ -6,6 +6,22 @@ import appStore from "../../utils/appStore";
 import { BrowserRouter } from "react-router-dom";
 
 describe("Header Test Cases", () => {
+  // beforeAll(() => {
+  //   console.log("Before All");
+  // });
+
+  // beforeEach(() => {
+  //   console.log("Before Each");
+  // });
+
+  // afterAll(() => {
+  //   console.log("After All");
+  // });
+
+  // afterEach(() => {
+  //   console.log("After Each");
+  // });
+
   it("should load the header with login button", () => {
     render(
       <BrowserRouter>
