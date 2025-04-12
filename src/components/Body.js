@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect, useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { SWIGGY_API_URL } from "../utils/constants";
@@ -48,6 +48,7 @@ const Body = () => {
         <div className="space-x-4">
           <input
             type="text"
+            data-testid="searchId"
             className="border border-black"
             value={search}
             onChange={(e) => setSearch(e.target.value)}

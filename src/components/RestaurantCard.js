@@ -8,7 +8,7 @@ const RestaurantCard = (props) => {
   // console.log(resData);
 
   return (
-    <div className="rescard-style">
+    <div className="rescard-style" data-testid="resCard">
       <img className="w-full h-[250px]" src={CDN_URL + cloudinaryImageId} />
       <h3 className="text-[20px] font-bold">{name}</h3>
       <p>{cuisines.join(", ")}</p>
