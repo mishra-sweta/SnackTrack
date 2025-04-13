@@ -31,7 +31,7 @@ describe("Header Test Cases", () => {
       </BrowserRouter>
     );
 
-    const button = screen.getByRole("button");
+    const button = screen.getByRole("button", { name: "Login" });
 
     expect(button).toHaveTextContent("Login");
   });

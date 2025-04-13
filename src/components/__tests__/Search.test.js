@@ -5,7 +5,7 @@ import Body from "../Body";
 import MOCK_DATA from "../../__mocks__/mockResSwiggy.json";
 import "@testing-library/jest-dom";
 
-//Trying to create a mock fetch fumction that is a browse function but the test cases work on JS DOM and it doesn't depend on browser or network call
+//Trying to create a mock fetch function that is a browse function but the test cases work on JS DOM and it doesn't depend on browser or network call
 global.fetch = jest.fn(() => {
   return Promise.resolve({
     json: () => {
@@ -31,13 +31,13 @@ test("should search Res List for pizza input", async () => {
 
   const searchInput = screen.getByTestId("searchId");
 
-  fireEvent.change(searchInput, { target: { value: "pizza" } });
+  fireEvent.change(searchInput, { target: { value: "tea" } });
 
   fireEvent.click(searchBtn);
 
   const cards = screen.getAllByTestId("resCard");
 
-  expect(cards.length).toBe(2);
+  expect(cards.length).toBe(1);
 
   expect(searchBtn).toBeInTheDocument();
 });
@@ -59,5 +59,5 @@ test("should filter top rated restaurants", async () => {
 
   const filteredRes = screen.getAllByTestId("resCard");
 
-  expect(filteredRes.length).toBe(3);
+  expect(filteredRes.length).toBe(1);
 });

@@ -24,3 +24,10 @@ test("should load Contact paragraphs", () => {
   //THIS IS CALLED ASSERTION
   expect(paragraphs.length).toBe(2);
 });
+
+test("should have phone number", () => {
+  render(<Contact />);
+
+  const phoneNumber = screen.getByTestId("phno");
+  expect(phoneNumber).toHaveTextContent("+12 5678 3672");
+});
