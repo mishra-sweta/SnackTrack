@@ -76,12 +76,12 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
-        <input
+        {/* <input
           type="text"
           className="border border-black"
           value={loggedInUser}
           onChange={(e) => setUserName(e.target.value)}
-        />
+        /> */}
       </div>
       <div className="flex flex-wrap gap-3">
         {filterRestaurants.map((restaurant) => (

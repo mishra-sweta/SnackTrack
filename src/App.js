@@ -13,15 +13,7 @@ import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
 
 const App = () => {
-  const [userName, setUserName] = useState();
-
-  useEffect(() => {
-    const user = {
-      //Assume we made an API call to get the login details
-      name: "Sweta Mishra",
-    };
-    setUserName(user.name);
-  }, []);
+  const [userName, setUserName] = useState("Sweta Mishra");
   return (
     //wrapping the app in the store provider to access the data everywhere, you can wrapper where it is needed
     <Provider store={appStore}>
